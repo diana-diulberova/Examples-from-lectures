@@ -111,6 +111,7 @@ string text = "— Я думаю, — сказал князь, улыбаясь,
 //             012345
 // s[3] // r
 
+/*
 string Replace(string text, char oldValue, char newValue)
 {
     string result = String.Empty;
@@ -136,3 +137,83 @@ Console.WriteLine(); // Вывод пустой строки
 
 newText = Replace(newText, 'В', 'в');
 Console.WriteLine(newText);
+*/
+
+
+
+// Упорядочивание массива от меньшего к большему
+/*
+int[] arr = {1, 5, 3, 6, 9, 2, 4, 1, 8};
+
+void PrintArray(int[] array)
+{
+    int count = array.Length;
+
+    for(int i = 0; i < count; i++)
+    {
+        Console.Write($"{array[i]}");
+    }
+    Console.WriteLine();
+}
+
+void SelectionSort(int[] array)
+{
+    for(int i = 0; i < array.Length-1; i++)
+    {
+        int minPosition = i;
+
+        for(int j = i+1; j<array.Length; j++)
+    {
+       if(array[j] < array [minPosition]) minPosition = j;
+    } 
+
+    int temporary = array[i];
+    array[i] = array[minPosition];
+    array[minPosition] = temporary;
+    }
+}
+
+PrintArray(arr);
+SelectionSort(arr);
+
+PrintArray(arr);
+*/
+
+
+
+// Упорядочивание массива от большего к меньшему
+
+int[] arr = {1, 5, 3, 6, 9, 2, 4, 1, 8};
+
+void PrintArray(int[] array)
+{
+    int count = array.Length;
+
+    for(int i = 0; i < count; i++)
+    {
+        Console.Write($"{array[i]}");
+    }
+    Console.WriteLine();
+}
+
+void SelectionSort(int[] array)
+{
+    for(int i = 0; i < array.Length-1; i++)
+    {
+        int maxPosition = i;
+
+        for(int j = i+1; j<array.Length; j++)
+    {
+       if(array[j] > array [maxPosition]) maxPosition = j;
+    } 
+
+    int temporary = array[i];
+    array[i] = array[maxPosition];
+    array[maxPosition] = temporary;
+    }
+}
+
+PrintArray(arr);
+SelectionSort(arr);
+
+PrintArray(arr);
